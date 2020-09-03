@@ -206,6 +206,7 @@ src :=  $(filter-out src/ariane_regfile.sv, $(wildcard src/*.sv))              \
         tb/ariane_testharness.sv                                               \
         tb/ariane_peripherals.sv                                               \
         tb/trace_ip.sv                                                         \
+        tb/debug_ip.sv                                                         \
         tb/common/uart.sv                                                      \
         tb/common/SimDTM.sv                                                    \
         tb/common/SimJTAG.sv

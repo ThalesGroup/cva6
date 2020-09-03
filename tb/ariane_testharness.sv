@@ -738,6 +738,13 @@ module ariane_testharness #(
     .cycles(cycles)
   ) ;
 
+  debug_ip  #(
+    .DEBUG_START(0),
+    .DEBUG_STOP(0)
+  ) debug_ip_i (
+    .cycles(cycles)
+  );
+
 `ifdef AXI_SVA
   // AXI 4 Assertion IP integration - You will need to get your own copy of this IP if you want
   // to use it
