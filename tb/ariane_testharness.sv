@@ -722,6 +722,22 @@ module ariane_testharness #(
     end
   end
 
+  logic [31:0] cycles;
+  always_ff @(posedge clk_i or negedge ndmreset_n) begin
+    if (~ndmreset_n) begin
+      cycles <= 0;
+    end else begin
+      cycles <= cycles+1;
+    end
+  end
+
+  trace_ip  #(
+    .InclSimDTM(InclSimDTM),
+    .SIM_FINISH(2000000)
+  ) trace_ip_i (
+    .cycles(cycles)
+  ) ;
+
 `ifdef AXI_SVA
   // AXI 4 Assertion IP integration - You will need to get your own copy of this IP if you want
   // to use it
