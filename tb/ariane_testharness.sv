@@ -19,6 +19,8 @@ module ariane_testharness #(
   parameter int unsigned AXI_DATA_WIDTH    = 64,
 `ifdef DROMAJO
   parameter bit          InclSimDTM        = 1'b0,
+`elsif PRELOAD
+  parameter bit          InclSimDTM        = 1'b0,
 `else
   parameter bit          InclSimDTM        = 1'b1,
 `endif
