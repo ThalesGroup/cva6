@@ -105,7 +105,8 @@ module trace_ip #(
         data_host=i_ariane.ex_stage_i.lsu_i.dcache_req_ports_o[2].data_wdata[63:0];
         if (address_host=='h80001000 && !InclSimDTM) begin
           $fwrite(f, "write to host addr=%h data=%h\n", address_host, data_host);
-          $finish(0);
+          $finish();
+          $finish();
         end
       end
     end
